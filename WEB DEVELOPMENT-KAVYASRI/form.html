@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>  
+</head>
+<style>
+    button{
+        color: blue;
+        background-color: white;
+        padding: 10px;
+    }
+</style>
+<body style="background-color: rgb(195, 226, 43);">
+     <center><h2>STUDENT ADMISSION FORM</h2></center>
+    <form>
+        <hr>
+        <label>NAME OF THE STUDENT:</label>
+        <input type="text" placeholder ="Enter your name"/><hr><hr>
+        <label>ADMISSION NUMBER:</label>
+        <input type="text" placeholder="Enter admission number"/><hr><hr>
+        <label>DATE OF BIRTH:</label>
+        <input type="date" placeholder ="Enter Date"/><hr><hr>
+        <label>FATHER NAME:</label>
+        <input type="text" placeholder ="Enter father name"/><hr><hr>
+        <label>MOTHER NAME:</label>
+        <input type="text" placeholder ="Enter mother name"/><hr><hr>
+        <label>CONTACT NUMBER:</label>
+        <input type="number" placeholder ="Enter contact number"/><hr><hr>
+        <label>STUDENT MAIL ID:</label>
+        <input type="mail" placeholder ="Enter mail ID"/><hr><hr>
+        <label>MAIL ID PASSWORD:</label>
+        <input type="password" placeholder ="Enter mail ID password"/><hr><hr>
+        <p>GENDER:</p>
+        <input type="radio" name="GENDER" value="Male"/>Male<br><br>
+        <input type="radio" name="GENDER" value="Female"/>Female<br><br>
+        <label>ADDRESS:</label>
+        <textarea name="description" placeholder="address"></textarea><br><br>
+        <p>CHOOSE YOUR COURSE:</p>
+        <input type="checkbox"/>HTML<br><br>
+        <input type="checkbox"/>CSS<br><br>
+         <input type="checkbox"/>BS<br><br>
+        <input type="checkbox"/>JS<br><br>
+        <p>PROGRAMMING LANGUAGE:</p>
+        <select>
+            <option name="Python">python</option>
+            <option name="Java">Java</option>
+            <option name="C++">C++</option>
+        </select>
+        <p>UPLOAD YOUR MARKSMEMO1:</p>
+        <input type="file"/><br>
+        <p>UPLOAD YOUR MARKSMEMO2:</p>
+        <input type="file"/><br><br><br>
+        <a href="https://wallpaperaccess.com/full/21312385.jpg"><input type="button" name="button" value="submit"/></a>
+        <button>Reset</button>
+    </form>
+     
+          
+</body>
+<script>
+    alert("welcome to my page!");
+    let n=prompt("enter ur name");
+    alert("hello"+n);
+    let result=confirm("continue?");
+       if(result){
+        alert("you clicked ok");
+       }
+       else{
+        alert("you clicked cancel");
+       }
+
+</script>
+</html>

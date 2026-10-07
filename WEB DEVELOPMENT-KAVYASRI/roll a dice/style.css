@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at top, #312e81, transparent 40%),
+        linear-gradient(135deg, #020617, #111827);
+
+    color: white;
+}
+
+/* Main Game */
+
+.game {
+    width: 380px;
+    padding: 35px;
+
+    text-align: center;
+
+    background: rgba(15, 23, 42, 0.9);
+
+    border: 1px solid #334155;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 30px rgba(99, 102, 241, 0.25),
+        0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+
+.small-title {
+    color: #22d3ee;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-size: 38px;
+
+    letter-spacing: 5px;
+
+    background: linear-gradient(
+        90deg,
+        #22d3ee,
+        #818cf8,
+        #c084fc
+    );
+
+    -webkit-background-cli: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: #0e1927;
+
+    margin-top: 8px;
+}
+
+/* Dice Area */
+
+.dice-area {
+    height: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 15px 0;
+}
+/* Dice */
+.dice {
+    width: 125px;
+    height: 125px;
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #cbd5e1
+        );
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 15px #22d3ee,
+        0 0 40px rgba(38, 70, 75, 0.4),
+        inset 0 -8px 10px rgba(0, 0, 0, 0.15);
+
+    transition: 0.2s;
+}
+
+/* Dice Dots */
+
+.dot {
+    width: 18px;
+    height: 18px;
+
+    background: #111827;
+
+    border-radius: 50%;
+
+    align-self: center;
+    justify-self: center;
+
+    box-shadow:
+        inset 2px 2px 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Dot Positions */
+
+.dot1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.dot2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.dot3 {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.dot4 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.dot5 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.dot6 {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.dot7 {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.dot8 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.dot9 {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+/* Hide dots initially */
+
+.dot {
+    opacity: 0;
+}
+
+/* Dice Faces */
+
+/* 1 */
+
+.face1 .dot5 {
+    opacity: 1;
+}
+
+/* 2 */
+
+.face2 .dot1,
+.face2 .dot9 {
+    opacity: 1;
+}
+
+/* 3 */
+
+.face3 .dot1,
+.face3 .dot5,
+.face3 .dot9 {
+    opacity: 1;
+}
+
+/* 4 */
+
+.face4 .dot1,
+.face4 .dot3,
+.face4 .dot7,
+.face4 .dot9 {
+    opacity: 1;
+}
+
+/* 5 */
+
+.face5 .dot1,
+.face5 .dot3,
+.face5 .dot5,
+.face5 .dot7,
+.face5 .dot9 {
+    opacity: 1;
+}
+
+/* 6 */
+
+.face6 .dot1,
+.face6 .dot3,
+.face6 .dot4,
+.face6 .dot6,
+.face6 .dot7,
+.face6 .dot9 {
+    opacity: 1;
+}
+
+/* Rolling Animation */
+
+.rolling {
+    animation: diceRoll 0.7s ease-in-out;
+}
+
+@keyframes diceRoll {
+
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    25% {
+        transform: rotate(90deg) scale(1.15);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(0.9);
+    }
+
+    75% {
+        transform: rotate(270deg) scale(1.15);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+/* Result */
+
+.result {
+    height: 35px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #22d3ee;
+
+    margin-bottom: 20px;
+}
+
+/* Button */
+
+#rollButton {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        90deg,
+        #06b6d4,
+        #6366f1
+    );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(99, 102, 241, 0.5);
+
+    transition: 0.2s;
+}
+
+#rollButton:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 25px rgba(34, 211, 238, 0.7);
+}
+
+#rollButton:active {
+    transform: scale(0.97);
+}
+
+/* Information */
+
+.info {
+    display: flex;
+
+    justify-content: space-around;
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    background: rgba(30, 41, 59, 0.7);
+
+    border-radius: 12px;
+}
+
+.info div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.info span {
+    font-size: 10px;
+
+    color: #64748b;
+
+    letter-spacing: 1px;
+}
+
+.info strong {
+    font-size: 20px;
+
+    color: #e2e8f0;
+}
+
+/* Keyboard Hint */
+
+.keyboard {
+    margin-top: 18px;
+
+    font-size: 11px;
+
+    color: #64748b;
+}
+
+.keyboard b {
+    color: #22d3ee;
+}
